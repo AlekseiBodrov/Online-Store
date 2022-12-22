@@ -4,7 +4,7 @@ final class MainViewController: UIViewController {
 
     //MARK: - var\let
     private lazy var heightForRow: CGFloat = 180
-    private lazy var heightForHeaderInSection: CGFloat = 35
+    private lazy var heightForHeaderInSection: CGFloat = 58
 
     private var items: [Item]?
     private var banners: [String]?

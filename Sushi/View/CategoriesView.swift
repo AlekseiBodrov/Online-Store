@@ -28,7 +28,7 @@ final class CategoriesView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        let size = CGSize(width: bounds.width, height: bounds.height)
+        let size = CGSize(width: bounds.width, height: sizeViewCategory.height * 1.5)
         collection.frame = .init(x: 0, y: 0, width: size.width, height: size.height)
     }
 

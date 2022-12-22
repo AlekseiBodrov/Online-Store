@@ -8,4 +8,4 @@
 - Адаптивная верстка интерфейса **xib + кодом**. Проверна на **iPhoneSE (3st generation)**
 
 ## <a id="Presentation"></a>Презентация
-![Загрузка](./presentation/1.gif)
+![Загрузка](./presentation/present.gif)
