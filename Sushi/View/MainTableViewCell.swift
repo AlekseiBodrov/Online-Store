@@ -1,38 +1,54 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
+    //MARK: - IBOutlet
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var discriptionLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
 
-    let customView = MainTableView.instanceFromNib()
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-
-
+    //MARK: - flow funcs
     func configure(with item: Item){
-        customView.frame = contentView.bounds
-        contentView.addSubview(customView)
-
         guard let name = item.image,
               let price = item.price,
               let discription = item.description,
               let label = item.name else {return}
 
-        customView.configureImage(with: name)
-        customView.configurePrice(with: price)
-        customView.configureDiscriptionLabel(with: discription)
-        customView.configureLabel(with: label)
+        configureImage(with: name)
+        configurePrice(with: price)
+        configureDiscriptionLabel(with: discription)
+        configureLabel(with: label)
 
     }
 
+    func configureImage(with name: String) {
+        icon.rounded()
+        icon.contentMode = .scaleAspectFill
+        icon.clipsToBounds = true
+        icon.image = UIImage(named: name)
+    }
+
+    func configureLabel(with text: String) {
+        nameLabel.text = text
+        nameLabel.numberOfLines = 2
+        nameLabel.font = UIFont(name: "Arial-BoldMT", size: 17)
+    }
+
+    func configureDiscriptionLabel(with text: String) {
+        discriptionLabel.font = UIFont(name: "ArialMT", size: 13)
+        discriptionLabel.numberOfLines = 0
+        discriptionLabel.text = text
+    }
+
+    func configurePrice(with price: Int) {
+        priceView.rounded()
+        priceView.layer.borderWidth = 1
+        priceView.layer.borderColor = UIColor.darkPink.cgColor
+
+        priceLabel.text = "от \(price) руб"
+        priceLabel.font = UIFont(name: "ArialMT", size: 13)
+        priceLabel.textColor = .darkPink
+        priceLabel.contentMode = .center
+    }
 }

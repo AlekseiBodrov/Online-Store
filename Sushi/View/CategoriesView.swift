@@ -38,7 +38,7 @@ final class CategoriesView: UIView {
         collection.dataSource = self
         collection.register(CategoriesViewCell.self, forCellWithReuseIdentifier: "CategoriesViewCell")
         addSubview(collection)
-        collection.backgroundColor = #colorLiteral(red: 0.9526819587, green: 0.9605210423, blue: 0.9771986604, alpha: 1)
+        collection.backgroundColor = .lightGray
     }
 }
 

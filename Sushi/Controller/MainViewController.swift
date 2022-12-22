@@ -50,7 +50,8 @@ final class MainViewController: UIViewController {
     private func configure() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(MainTableViewCell.self, forCellReuseIdentifier: "MainTableViewCell")
+        let nib  = UINib(nibName: "MainTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "MainTableViewCell")
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorColor = .lightGray
 

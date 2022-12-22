@@ -15,7 +15,6 @@ class JSONManager {
         } catch {
             print("Data err")
         }
-        print(object)
         return object
     }
 }
